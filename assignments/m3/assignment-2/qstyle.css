@@ -1,0 +1,22 @@
+body{
+    font: 14px Georgia, serif;
+    background-image: url(back.jpg);
+}
+#page-wrap {
+    width: 1000px;
+    margin: 0 auto;
+    
+}
+.demo {
+    text-align: center;
+    background-color: rgb(253, 14, 14);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 50ch;
+    
+}
+h2 {
+    margin: 25px 0;
+    font: 14px Georgia, Serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
