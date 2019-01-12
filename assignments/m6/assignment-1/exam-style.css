@@ -1,0 +1,89 @@
+body {
+    margin : 1%;
+    backface-visibility: initial;
+    background-color: rgb(255, 154, 154);
+    
+}
+.image {
+    border-radius: 50%;
+    widows: 200px;
+    text-align: center;
+    
+}
+.block1 {
+    border: solid;
+    background-color: rgb(255, 81, 81);
+    border-radius: 2%;
+    text-align: center;
+    margin: 1%;
+    border-bottom-color: black;
+    padding:0px;
+    margin-left:-8px;
+    margin-top: -7px;
+    box-shadow: 10px 10px 8px #888888;
+    
+}
+.details{
+    border: solid;
+    background-color: rgb(59, 72, 255);
+    border-radius: 2%;
+    margin-bottom: 2%;
+    margin: 1%;
+    border-bottom-color: black;
+    padding:10%;
+    margin-left:-5px;
+    box-shadow: 10px 10px 8px #888888;
+}
+.course{
+    border: solid;
+    background-color: rgb(0, 255, 34);
+    text-align: right;
+    border-radius: 2%;
+    margin-top: 7%;
+    margin-bottom: 0%;
+    border-bottom-color: black;
+    padding:50px;
+    margin-left:-25px;
+    box-shadow: 10px 10px 8px #888888;
+
+}
+.t1{
+    border: solid;
+    background-color: rgb(73, 73, 255);
+    text-align: center;
+    border-radius: 2%;
+    margin-bottom: 2%;
+    margin: 0%;
+    border-bottom-color: black;
+    padding:0px;
+    margin-left:-15px;
+    margin-right:-20px;
+    height:100%;
+    box-shadow: 10px 10px 8px #888888;
+    
+}
+.remarks{
+    border: solid;
+    background-color: rgb(87, 255, 191);
+    text-align: center;
+    border-radius: 2%;
+    margin-bottom: 2%;
+    overflow:auto;
+    margin: 1%;
+    overflow-y: scroll;
+    border-bottom-color: black;
+    padding:0px;
+    margin-left:-25px;
+    margin-right:-2px;
+    height: 150px;
+    box-shadow: 10px 10px 8px #888888;
+}
+hr { 
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+  }
