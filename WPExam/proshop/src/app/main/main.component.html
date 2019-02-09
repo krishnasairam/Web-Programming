@@ -1,22 +1,24 @@
-<!-- <div style="position: relative;"><div style="position: absolute; z-index: -1; top: 0px; left: 0px; bottom: 0px; right: 0px; overflow: hidden; background-size: cover; background-repeat: no-repeat; background-position: 50% 50%; background-image: url(&quot;/assets/video.gif&quot;);"><video autoplay="" loop="" muted="" style="margin: auto; position: absolute; z-index: -1; top: 50%; left: 50%; transform: translate(-50%, -50%); visibility: visible; width: 653px; height: auto;"><source src="video/video.mp4" type="video/mp4"><source src="video/video.webm" type="video/webm"><source src="video/video.ogv" type="video/ogg"></video></div>
-  <div class="banner-top">
-  <div class="container">
-  <div class="banner-info">
-    <h3>Ikkada Vethakandi, Nachuthe Konukondi</h3>	
-    <div class="search-form">
-      <form class = "example" action="#" method="post">
-        <input type="text" placeholder="Search.." name="search">
-        <button type="submit"><i class="glyphicon glyphicon-search"></i></button>
-      </form>
-    </div>		
-  </div>	
+<div class="nav-top">
+  <nav class="navbar navbar-default"> 
+  </nav>
+   <div class="cart">
+      <span routerLink = "/cart" class="fa fa-shopping-cart my-cart-icon" style="position: absolute; background-color: inherit; z-index: 999;"><span class="badge badge-notify my-cart-badge">
+          <a routerLink = "/cart">{{len}}</a>
+      </span></span>
   </div>
-</div> -->
+  <div class="clearfix"></div>
+</div>
 <div class="banner-top">
     <div class="search-form">
       <form class = "example" action="#" method="post">
-        <input type="text" placeholder="Search.." name="search">
-        <button type="submit"><i class="glyphicon glyphicon-search"></i></button>
+        <!-- <input type="text" placeholder="Search.." name="search"> -->
+        <input  type="text" name = "search" [(ngModel)]="filterName" placeholder="Search for your product..">
+         <!-- <div *ngFor = 'let name of prods | filterBy:filterName index as i'>
+      <nav>
+        <img src="assests/1.jpeg" style = "width : 120px; height: 200px">  <a class = "b" routerLink = "/productdetails/{{i}}">{{name}}</a>
+        <hr>
+    </nav>
+    </div> -->
       </form>
     </div>
 </div>
@@ -28,35 +30,44 @@
       <b class="line"></b>
     </div>
   </div>
-  <div class="tab-head">
-    <div class="tab-content tab-content-t">
-      <div class="tab-pane active text-style" id = "tab1">
+  <div *ngIf = "filterName">
         <div class="com-w31">
-          <div *ngFor="let in of temp " class="col-md-3 m-wthree">
+          <div *ngFor = 'let in of prods | filterByName:filterName' class="col-md-3 m-wthree">
             <div class="col-m">
-                <a href="#" data-toggle="modal" data-target="#myModal1" class="offer-img">
-                  <img src="assets/{{in.image}}" class="img-responsive" alt="" style = "height: 100px;width: 100px">
+                <a routerLink = "/productdetails/{{in}}" data-toggle="modal" data-target="#myModal1" class="offer-img">
+                  <img routerLink = "/productdetails/{{in}}" src="assets/{{tem[in].image}}" class="img-responsive" alt="" style = "height: 100px;width: 100px">
                 </a>
               <div class="mid-1">
-                <div class="women">
-                  <h6>{{in.title}}</h6>							
-                </div>
-                <div class="mid-2">
-                  <p><em class="item_price">{{in.quantity}}</em></p>
-                  <div class="clearfix"></div>
-                </div>
-                <div class="mid-2">
-                    <p><em class="item_price">{{in.description}}</em></p>
-                    <div class="clearfix"></div>
-                  </div>
-                <div class="add">
-                    <button (click) = "cart(in)" class="btn btn-danger my-cart-btn my-cart-b " data-id="1" data-name="Moong" data-summary="summary 1" data-price="1.50" data-quantity="1" data-image="images/of.png">Add to Cart</button>
-                </div>
+                  <h6>{{tem[in].name}}</h6>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
     </div>
+  
   </div>
 </div>
+<div *ngIf = "!filterName">
+    <div class="com-w31">
+      <div *ngFor = 'let prod of prods; index as i' class="col-md-3 m-wthree tttt">
+        <div class="col-m ggg">
+            <a routerLink = "/productdetails/{{i}}" data-toggle="modal" data-target="#myModal1" class="offer-img">
+              <img routerLink = "/productdetails/{{i}}" src="assets/{{tem[i].image}}" class="img-responsive" alt="" style = "height: 200px;width: 100px">
+            </a>
+          <div class="mid-1">
+              <h6>{{tem[i].name}}</h6>
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+</div>
+<!-- <div class = "a" style= "padding-left: 500px;">
+    <input  [(ngModel)]="filterName" placeholder="Search for your product..">
+    </div>
+    <h2 style = "text-align: center">Grab your product</h2>
+    <div *ngFor = 'let name of prods | filterBy:filterName index as i'>
+      <nav>
+        <img src="assests/1.jpeg" style = "width : 120px; height: 200px">  <a class = "b" routerLink = "/productdetails/{{i}}">{{name}}</a>
+        <hr>
+    </nav>
+    </div> -->
